@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #fff;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.card-back {
+    background-color: #fff;
+    color: #0f0887;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 0;
+}
+
+.card-back img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card-back h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-back p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.card-back button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: #0f0887;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-back button:hover {
+    background-color: #ddd;
+}
+
+.card:hover .card-front {
+    opacity: 0;
+}
+
+.card:hover .card-back {
+    opacity: 1;
+    transform: scale(1);
+}
